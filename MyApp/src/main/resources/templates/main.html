@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Message App</title>
+</head>
+<body>
+<div>
+    <form method="post" action="/">
+        <input type="text" name="text" placeholder="Enter message">
+        <input type="text" name="tag" placeholder="Tag">
+        <button type="submit">Add</button>
+    </form>
+</div>
+
+<div>List message</div>
+
+<form method="post" action="/filter">
+    <input type="text" name="filter">
+    <button type="submit">Find</button>
+</form>
+
+<div th:each="message : ${messages}">
+    <b th:text="${message.id}"></b>
+    <span th:text="${message.text}"></span>
+    <i th:text="${message.tag}"></i>
+</div>
+
+</body>
+</html>
