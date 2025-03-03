@@ -50,8 +50,7 @@ public class MainController {
         }
         Iterable<Message> messages = messageRepository.findAll();
         model.addAttribute("messages", messages);
-        model.addAttribute("filter", "");
-        return "main";
+        return "redirect:/main";
     }
 }
 
